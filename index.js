@@ -14,6 +14,8 @@ web3.eth.getAccounts((error, result) => {
 	console.log(error || result)
 })
 
+console.log($)
+
 function createContractCode() {
 	var addressesString = document.getElementById("addresses").value
 	var addresses = addressesString.split(",").map(a => a.trim())

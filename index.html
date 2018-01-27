@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Split It Creator</title>
-  <link type="text/css" rel="stylesheet" href="./bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="./libs/css/materialize.min.css"  media="screen,projection"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
   <h1>Split It Creator</h1>
 
   <p>Insert 5 Comma Separated Addresses</p>
-  <textarea cols="50" rows="5" id="addresses">0x1D9db6e3b47d120908f83c95A2D59EE42b788447, 0xe0bba18dD678dCC9A130bD950d29891D7dEc0514, 0x0597C35Dd5B4F60C3baCBCEf6091b8A18Fb97972, 0x447Df96707F7B6502b8a4702229b1FEd37C143dB, 0xceBAD5B1656b0b4EbDa8F584c8C40Aaf4eA3E7E4</textarea>
+  <textarea cols="50" rows="5" id="addresses"></textarea>
   <button class="waves-effect waves-light btn" onclick="createContractCode()">Generate Contract Code</button>
 
   <!-- <pre id="codePreviewParagraph"></pre> -->
@@ -18,7 +21,8 @@
 
   <!-- <pre id="transactionObjectParagraph"></pre> -->
 
-  <script src='./bower_components/materialize/dist/js/materialize.min.js'></script>
+  <script src='./bower_components/jquery/dist/jquery.min.js'></script>
+  <script src='./libs/js/materialize.min.js'></script>
   <script src='./bower_components/web3/dist/web3.min.js'></script>
   <script src='index.js'></script>
 </body>
