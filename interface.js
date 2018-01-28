@@ -4,10 +4,11 @@ function shortid() {
 
 class Interface {
   constructor() {
+    this.inputRoster = {}
     this.inputTemplate = document.getElementById('address-input-template')
     this.inputsContainer = document.getElementById('inputs-container')
     this.helpModal = $('#help-modal')
-    this.inputRoster = {}
+    this.deployModal = $('#deploy-modal')
   }
 
   getInputCount() {
@@ -49,12 +50,17 @@ class Interface {
     this.helpModal.modal('open')
   }
 
+  deploy() {
+
+  }
+
   initialRender() {
     this.addNewInput()
     this.addNewInput()
     $(document).ready(() => {
+      this.deployModal.modal()
       this.helpModal.modal()
-      this.helpModal.modal('open')
+      window.setTimeout(() => this.helpModal.modal('open'), 500)
     })
   }
 }
