@@ -19,6 +19,9 @@ class Interface {
     this.inputRoster[id] = id
     const newInput = this.inputTemplate.cloneNode(true)
     newInput.id = id
+    newInput.children[0].children[0].classList.add('address')
+    newInput.children[0].children[0].id = `address-${id}`
+    newInput.children[0].children[1].setAttribute('for', `address-${id}`)
     newInput.children[1].onclick = (e) => {
       this.removeInput(id)
     }
@@ -27,15 +30,24 @@ class Interface {
 
   removeInput(id) {
     if (this.getInputCount() <= 2) return
-    document.getElementById(id).remove()
+    const input = document.getElementById(id)
+    input.classList.add('fade-out')
+    window.setTimeout(() => input.remove(), 250)
     delete this.inputRoster[id]
   }
 
-  initialRender() {
-    console.log('inputsContainer:', this.inputsContainer)
-    this.addNewInput()
+  getAddresses() {
+    const addresses = []
+    document.querySelectorAll('.address').forEach(e => {
+      addresses.push(e.value)
+    })
+    return addresses
   }
 
+  initialRender() {
+    this.addNewInput()
+    this.addNewInput()
+  }
 }
 
 const interface = new Interface()

@@ -1,3 +1,7 @@
+function initiateDeploy() {
+  console.log(interface.getAddresses())
+}
+
 // console.log({Web3})
 //
 // if (typeof web3 !== 'undefined') {
