@@ -191,6 +191,7 @@ div.fade-out {
 
 .delete-icon {
   flex: 1 0 auto;
+  color: #9d9fad;
 }
 
 .delete-icon:hover {
