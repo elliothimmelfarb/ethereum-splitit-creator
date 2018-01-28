@@ -5,10 +5,10 @@
   <title>Split It Creator</title>
   <link type="text/css" rel="stylesheet" href="./libs/css/materialize.min.css"  media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="./style.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <nav>
     <div class="nav-wrapper blue-grey lighten-5">
       <a href="#" id="logo" class="brand-logo">Split It Creator</a>
@@ -22,33 +22,13 @@
   <div id="outer-app-container" class="container">
     <div id="inner-app-container">
       <br/>
-      <form id="inputs-container">
-        <button type="submit" value="Submit" class="waves-effect waves-light blue darken-1 btn" onclick="testForm(e)">Publish Contract</button>
-        <p class="text-center">Add up to 10 addresses below:</p>
-        <div class="address-input">
-          <div class="input-field">
-            <input id="address1" type="text" class="validate">
-            <label for="address1">Ethereum Account Address</label>
-          </div>
-          <i class="material-icons right delete-icon">cancel</i>
-        </div>
-        <div class="address-input">
-          <div class="input-field">
-            <input id="address2" type="text" class="validate">
-            <label for="address2">Ethereum Account Address</label>
-          </div>
-          <i class="material-icons right delete-icon">cancel</i>
-        </div>
-        <div class="address-input">
-          <div class="input-field">
-            <input id="address3" type="text" class="validate">
-            <label for="address3">Ethereum Account Address</label>
-          </div>
-          <i class="material-icons right delete-icon">cancel</i>
-        </div>
-      </form>
+      <button class="waves-effect waves-light blue darken-1 btn" onclick="testForm(e)">Publish Contract</button>
+      <p class="text-center">Add up to 10 addresses below:</p>
+
+      <div id="inputs-container"></div>
+
       <div id="add-btn-container">
-        <a class="btn-floating btn-small waves-effect waves-light blue darken-1"><i class="material-icons">add</i></a>
+        <a onclick="interface.addNewInput()" class="btn-floating btn-small waves-effect waves-light blue darken-1"><i class="material-icons">add</i></a>
       </div>
 
       <!-- <textarea cols="50" rows="5" id="addresses"></textarea> -->
@@ -60,13 +40,20 @@
     </div>
   </div>
 
-  <div id="template-area">
-
+  <div id="template-container">
+    <div id="address-input-template" class="address-input">
+      <div class="input-field">
+        <input id="address1" type="text" class="validate">
+        <label for="address1">Ethereum Account Address</label>
+      </div>
+      <i class="material-icons right delete-icon">cancel</i>
+    </div>
   </div>
 
+  <script src='./bower_components/web3/dist/web3.min.js'></script>
   <script src='./bower_components/jquery/dist/jquery.min.js'></script>
   <script src='./libs/js/materialize.min.js'></script>
-  <script src='./bower_components/web3/dist/web3.min.js'></script>
+  <script src='interface.js'></script>
   <script src='index.js'></script>
 </body>
 </html>

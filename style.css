@@ -2,12 +2,18 @@ nav ul li a {
   color: #484a58;
 }
 
+nav {
+  position: fixed;
+  z-index: 30;
+}
+
 #outer-app-container {
   display: flex;
   justify-content: center;
 }
 
 #inner-app-container {
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,8 +29,8 @@ nav ul li a {
   color: #484a58;
 }
 
-#template-area {
-  /* display: none; */
+#template-container {
+  display: none;
 }
 
 .address-input {
