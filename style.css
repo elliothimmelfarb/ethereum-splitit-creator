@@ -17,6 +17,7 @@ div.fade-out {
 }
 
 #outer-app-container {
+  height: 100%;
   display: flex;
   justify-content: center;
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -57,6 +58,7 @@ div.fade-out {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
 }
 
 #second-nav {
@@ -75,6 +77,37 @@ div.fade-out {
 #logo, #page-title {
   margin-left: 10px;
   color: #484a58;
+}
+
+#footer-container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+#github-a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: black !important;
+  margin-bottom: 5px;
+}
+
+
+#github-a .fab.fa-2x.fa-github {
+  color: black !important;
+}
+
+#page-title {
+  font-size: 1.3em;
 }
 
 #template-container {
