@@ -26,11 +26,41 @@ div.fade-out {
         animation: fadein 1s;
 }
 
+.left {
+  margin: 0 auto;
+}
+
+#nav-mobile {
+  display: flex;
+  align-items: center;
+}
+
+#find-existing {
+  margin-right: 10px;
+}
+
+#find-existing input {
+  border: 1px solid #484a58;
+  border-radius: 5px;
+  background-color: white;
+  height: 35px;
+  width: 300px;
+  padding-left: 10px;
+}
+
+#deploy-btn {
+  margin: 0 20px;
+}
+
 #inner-app-container {
-  margin-top: 85px;
+  margin-top: 160px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#second-nav {
+  margin-top: 64px;
 }
 
 #add-btn-container {
@@ -42,7 +72,7 @@ div.fade-out {
   transition: all 3s ease-in-out;
 }
 
-#logo {
+#logo, #page-title {
   margin-left: 10px;
   color: #484a58;
 }
