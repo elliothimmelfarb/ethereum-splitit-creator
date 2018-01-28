@@ -1,0 +1,59 @@
+nav ul li a {
+  color: #484a58;
+}
+
+#outer-app-container {
+  display: flex;
+  justify-content: center;
+}
+
+#inner-app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#add-btn-container {
+  display: flex;
+  /* justify-content: flex-end; */
+}
+
+#logo {
+  margin-left: 10px;
+  color: #484a58;
+}
+
+#template-area {
+  /* display: none; */
+}
+
+.address-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-field {
+  flex: 1 0 auto;
+  min-width: 300px;
+}
+
+.delete-icon {
+  flex: 1 0 auto;
+}
+
+.delete-icon:hover {
+  color: red;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.input-field label {
+  pointer-events: all !important;
+}
+
+#inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

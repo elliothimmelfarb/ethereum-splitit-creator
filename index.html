@@ -3,23 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <title>Split It Creator</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="./libs/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="./style.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-  <h1>Split It Creator</h1>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <nav>
+    <div class="nav-wrapper blue-grey lighten-5">
+      <a href="#" id="logo" class="brand-logo">Split It Creator</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons left">verified_user</i>Find Existing Contract</a></li>
+        <li><a href="badges.html"><i class="material-icons left">payment</i>Donate</a></li>
+        <li><a href="collapsible.html"><i class="material-icons left">help</i>Help</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="outer-app-container" class="container">
+    <div id="inner-app-container">
+      <br/>
+      <form id="inputs-container">
+        <button type="submit" value="Submit" class="waves-effect waves-light blue darken-1 btn" onclick="testForm(e)">Publish Contract</button>
+        <p class="text-center">Add up to 10 addresses below:</p>
+        <div class="address-input">
+          <div class="input-field">
+            <input id="address1" type="text" class="validate">
+            <label for="address1">Ethereum Account Address</label>
+          </div>
+          <i class="material-icons right delete-icon">cancel</i>
+        </div>
+        <div class="address-input">
+          <div class="input-field">
+            <input id="address2" type="text" class="validate">
+            <label for="address2">Ethereum Account Address</label>
+          </div>
+          <i class="material-icons right delete-icon">cancel</i>
+        </div>
+        <div class="address-input">
+          <div class="input-field">
+            <input id="address3" type="text" class="validate">
+            <label for="address3">Ethereum Account Address</label>
+          </div>
+          <i class="material-icons right delete-icon">cancel</i>
+        </div>
+      </form>
+      <div id="add-btn-container">
+        <a class="btn-floating btn-small waves-effect waves-light blue darken-1"><i class="material-icons">add</i></a>
+      </div>
 
-  <p>Insert 5 Comma Separated Addresses</p>
-  <textarea cols="50" rows="5" id="addresses"></textarea>
-  <button class="waves-effect waves-light btn" onclick="createContractCode()">Generate Contract Code</button>
+      <!-- <textarea cols="50" rows="5" id="addresses"></textarea> -->
 
-  <!-- <pre id="codePreviewParagraph"></pre> -->
+      <!-- <pre id="codePreviewParagraph"></pre> -->
 
-  <button class="waves-effect waves-light btn" onclick="publishContract()">Publish Contract</button>
 
-  <!-- <pre id="transactionObjectParagraph"></pre> -->
+      <!-- <pre id="transactionObjectParagraph"></pre> -->
+    </div>
+  </div>
+
+  <div id="template-area">
+
+  </div>
 
   <script src='./bower_components/jquery/dist/jquery.min.js'></script>
   <script src='./libs/js/materialize.min.js'></script>

@@ -14,7 +14,10 @@ web3.eth.getAccounts((error, result) => {
 	console.log(error || result)
 })
 
-console.log($)
+function testForm(e, v) {
+  e.preventDefault()
+  console.log(e, v)
+}
 
 function createContractCode() {
 	var addressesString = document.getElementById("addresses").value
