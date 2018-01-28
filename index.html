@@ -4,23 +4,20 @@
   <meta charset="UTF-8">
   <title>Split It</title>
   <link type="text/css" rel="stylesheet" href="./libs/css/materialize.min.css"  media="screen,projection"/>
-  <!-- <link type="text/css" rel="stylesheet" href="./libs/css/fa-regular.min.css"  > -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link type="text/css" rel="stylesheet" href="./style.css"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
   <nav id="first-nav">
     <div class="nav-wrapper blue lighten-2">
       <a href="#" id="logo" class="brand-logo">Split It</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul id="nav-mobile" class="right">
         <li>
           <div id="find-existing">
             <input id="existing1" type="text" placeholder="Find Existing Contract">
-            <!-- <label for="existing1">Find Existing Contract</label> -->
           </div>
-          <!-- <li><a href="sass.html"><i class="material-icons left">account_balance</i>Find Existing Contract</a></li> -->
         </li>
       </ul>
     </div>
@@ -28,8 +25,8 @@
   <nav id="second-nav">
     <div class="nav-wrapper blue-grey lighten-5">
       <a href="#" id="page-title" class="logo">Create New Contract</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="collapsible.html"><i class="material-icons left">help</i></a></li>
+      <ul id="nav-mobile" class="right">
+        <li><a class="modal-trigger" data-target="help-modal" onclick="interface.openHelp()"><i class="material-icons">help</i></a></li>
         <li>
           <button id="deploy-btn" class="waves-effect waves-light blue darken-1 btn" onclick="initiateDeploy()">
             Deploy Smart Contract
@@ -49,16 +46,18 @@
         <a id="add-btn" onclick="interface.addNewInput()" class="btn-floating btn-small waves-effect waves-light blue darken-1"><i class="material-icons">add</i></a>
       </div>
 
-      <!-- <textarea cols="50" rows="5" id="addresses"></textarea> -->
-
-      <!-- <pre id="codePreviewParagraph"></pre> -->
-
-
-      <!-- <pre id="transactionObjectParagraph"></pre> -->
-
-
     </div>
 
+  </div>
+
+  <div id="help-modal" class="modal">
+    <div class="modal-content">
+      <h4>What is this?</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Makes Sense!</a>
+    </div>
   </div>
 
   <div id="footer-container" class="footer-copyright">

@@ -6,6 +6,7 @@ class Interface {
   constructor() {
     this.inputTemplate = document.getElementById('address-input-template')
     this.inputsContainer = document.getElementById('inputs-container')
+    this.helpModal = $('#help-modal')
     this.inputRoster = {}
   }
 
@@ -44,9 +45,17 @@ class Interface {
     return addresses
   }
 
+  openHelp() {
+    this.helpModal.modal('open')
+  }
+
   initialRender() {
     this.addNewInput()
     this.addNewInput()
+    $(document).ready(() => {
+      this.helpModal.modal()
+      this.helpModal.modal('open')
+    })
   }
 }
 
