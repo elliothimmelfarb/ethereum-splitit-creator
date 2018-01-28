@@ -17,7 +17,7 @@ div.fade-out {
 }
 
 #outer-app-container {
-  height: 100%;
+  height: 80vh;
   display: flex;
   justify-content: center;
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -54,15 +54,13 @@ div.fade-out {
 }
 
 #inner-app-container {
-  margin-top: 160px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  height: 30%;
 }
 
 #second-nav {
-  margin-top: 64px;
+  /* margin-top: 64px; */
 }
 
 #first-nav {
@@ -90,12 +88,13 @@ div.fade-out {
 }
 
 #footer-container {
-  position: absolute;
+  position: static;
   display: flex;
   width: 100%;
-  bottom: 10px;
+  height: 100%;
+  align-self: flex-end;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 #footer-inner {
@@ -126,6 +125,8 @@ div.fade-out {
 
 .address-input {
   display: flex;
+  justify-content: space-around;
+  /* flex: 0 0; */
   flex-direction: row;
   align-items: center;
 
@@ -142,7 +143,6 @@ div.fade-out {
 }
 
 .delete-icon {
-  flex: 1 0 auto;
   color: #9d9fad;
 }
 
@@ -157,7 +157,7 @@ div.fade-out {
 }
 
 #inputs-container {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }
