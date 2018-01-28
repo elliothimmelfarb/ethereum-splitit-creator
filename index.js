@@ -1,5 +1,8 @@
 function initiateDeploy() {
-  console.log(interface.getAddresses())
+  const addresses = interface.getAddresses()
+  console.log(addresses)
+  const contractCode = createContractCode(addresses)
+  interface.deploy(contractCode)
 }
 
 // console.log({Web3})
@@ -23,66 +26,58 @@ function initiateDeploy() {
 //
 // })
 //
-// function createContractCode() {
-//
-// 	var addressesString = document.getElementById("addresses").value
-//
-// 	var addresses = addressesString.split(",").map(a => a.trim())
-//
-// 	contractCode = `
-//
-//   pragma solidity ^0.4.4;
-//
-//   contract SplitIt {
-//
-//       address[] employees = [${addresses.join(", ") }];
-//       uint totalReceived;
-//       mapping (address => uint) withdrawnAmounts;
-//
-//       function SplitIt() payable public {
-//           updateTotalReceived();
-//       }
-//
-//       function () payable public {
-//           updateTotalReceived();
-//       }
-//
-//       function updateTotalReceived() internal {
-//           totalReceived = msg.value;
-//       }
-//
-//       modifier canWithdraw() {
-//
-//           bool contains = false;
-//
-//           for(uint i = 0; i < employees.length; i) {
-//               if (employees[i] == msg.sender) {
-//                   contains = true;
-//               }
-//           }
-//
-//           require(contains);
-//           _;
-//
-//       }
-//
-//       function withdraw() canWithdraw public {
-//
-//           uint amountAllocated = totalReceived/employees.length;
-//           uint amountWithdrawn = withdrawnAmounts[msg.sender];
-//           uint amount = amountAllocated - amountWithdrawn;
-//           withdrawnAmounts[msg.sender] = amountWithdrawn  amount;
-//
-//           if (amount > 0) {
-//              msg.sender.transfer(amount);
-//           }
-//
-//       }
-//   }`
-//
-//   document.getElementById("codePreviewParagraph").innerHTML = contractCode
-//
-// }
+function createContractCode(addresses) {
+
+	return `
+  pragma solidity ^0.4.4;
+
+  contract SplitIt {
+
+    address[] employees = [
+      ${addresses.join(",\n      ") }
+    ];
+
+    uint totalReceived;
+    mapping (address => uint) withdrawnAmounts;
+
+    function SplitIt() payable public {
+      updateTotalReceived();
+    }
+
+    function () payable public {
+      updateTotalReceived();
+    }
+
+    function updateTotalReceived() internal {
+      totalReceived = msg.value;
+    }
+
+    modifier canWithdraw() {
+      bool contains = false;
+
+      for(uint i = 0; i < employees.length; i) {
+        if (employees[i] == msg.sender) {
+          contains = true;
+        }
+      }
+
+      require(contains);
+      _;
+    }
+
+    function withdraw() canWithdraw public {
+      uint amountAllocated = totalReceived/employees.length;
+      uint amountWithdrawn = withdrawnAmounts[msg.sender];
+      uint amount = amountAllocated - amountWithdrawn;
+      withdrawnAmounts[msg.sender] = amountWithdrawn  amount;
+
+      if (amount > 0) {
+         msg.sender.transfer(amount);
+      }
+
+    }
+  }`
+}
 //
 // function publishContract() {
 //

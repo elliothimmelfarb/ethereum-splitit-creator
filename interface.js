@@ -9,6 +9,7 @@ class Interface {
     this.inputsContainer = document.getElementById('inputs-container')
     this.helpModal = $('#help-modal')
     this.deployModal = $('#deploy-modal')
+    this.reviewArea = document.getElementById('review-area')
   }
 
   getInputCount() {
@@ -43,15 +44,16 @@ class Interface {
     document.querySelectorAll('.address').forEach(e => {
       addresses.push(e.value)
     })
-    return addresses
+    return addresses.filter(a => a.length)
   }
 
   openHelp() {
     this.helpModal.modal('open')
   }
 
-  deploy() {
-
+  deploy(contractCode) {
+    this.deployModal.modal('open')
+    this.reviewArea.innerHTML = contractCode
   }
 
   initialRender() {

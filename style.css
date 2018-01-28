@@ -44,6 +44,11 @@ div.fade-out {
         animation: fadein 1s;
 }
 
+#review-area {
+  border: 1px solid #484a58;
+  border-radius: 5px;
+}
+
 #find-existing {
   margin-right: 10px;
 }
