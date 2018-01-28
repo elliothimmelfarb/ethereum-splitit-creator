@@ -65,6 +65,16 @@ div.fade-out {
   margin-top: 64px;
 }
 
+#first-nav {
+  /* height: auto; */
+}
+
+#nav-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+
 #add-btn-container {
   display: flex;
   transition: all 1s ease-out;
@@ -126,6 +136,33 @@ div.fade-out {
         animation: fadein 1s;
 }
 
+.input-field {
+  flex: 1 0 auto;
+  min-width: 300px;
+}
+
+.delete-icon {
+  flex: 1 0 auto;
+  color: #9d9fad;
+}
+
+.delete-icon:hover {
+  color: red;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.input-field label {
+  pointer-events: all !important;
+}
+
+#inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -182,30 +219,4 @@ div.fade-out {
 @-o-keyframes fadeout {
     from { opacity: 1; }
     to   { opacity: 0; }
-}
-
-.input-field {
-  flex: 1 0 auto;
-  min-width: 300px;
-}
-
-.delete-icon {
-  flex: 1 0 auto;
-  color: #9d9fad;
-}
-
-.delete-icon:hover {
-  color: red;
-  cursor: pointer;
-  transform: scale(1.2);
-}
-
-.input-field label {
-  pointer-events: all !important;
-}
-
-#inputs-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
