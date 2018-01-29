@@ -28,6 +28,18 @@ class Interface {
     newInput.children[1].onclick = (e) => {
       this.removeInput(id)
     }
+    newInput.children[0].children[0].oninput = (e) => {
+      console.log(e)
+      if (this.validateAddress(e.target.value)) {
+        e.target.classList.replace('invalid', 'valid')
+        newInput.children[0].children[1].style.color = 'green'
+        newInput.children[0].children[1].children[0].innerHTML = 'check'
+      } else {
+        e.target.classList.add('valid', 'invalid')
+        newInput.children[0].children[1].style.color = 'red'
+        newInput.children[0].children[1].children[0].innerHTML = 'close'
+      }
+    }
     this.inputsContainer.appendChild(newInput)
   }
 
@@ -54,6 +66,11 @@ class Interface {
   deploy(contractCode) {
     this.deployModal.modal('open')
     this.reviewArea.innerHTML = contractCode
+  }
+
+  validateAddress(address) {
+    console.log(address)
+    return web3.isAddress(address)
   }
 
   initialRender() {

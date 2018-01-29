@@ -160,7 +160,7 @@ svg, a {
 
 .input-field {
   flex: 1 0 auto;
-  min-width: 300px;
+  width: 400px;
 }
 
 .delete-icon {
@@ -181,6 +181,17 @@ svg, a {
   /* display: flex; */
   flex-direction: column;
   align-items: center;
+}
+
+/* valid color */
+.input-field .address.valid {
+  border-bottom: 1px solid green;
+  box-shadow: 0 1px 0 0 green;
+}
+/* invalid color */
+.input-field .address.invalid {
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 red;
 }
 
 
