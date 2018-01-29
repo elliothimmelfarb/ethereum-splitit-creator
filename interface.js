@@ -40,7 +40,39 @@ class Interface {
         newInput.children[0].children[1].children[0].innerHTML = 'close'
       }
     }
-    this.inputsContainer.appendChild(newInput)
+
+    this.inputsContainer.appendChild(
+      this.setInputHandlers(newInput)
+    )
+  }
+
+  setInputHandlers(newInput) {
+    newInput.children[1].onclick = (e) => {
+      this.removeInput(id)
+    }
+    newInput.children[0].children[0].oninput = (e) => {
+      console.log(e)
+      if (this.validateAddress(e.target.value)) {
+        e.target.classList.replace('invalid', 'valid')
+        newInput.children[0].children[1].style.color = 'green'
+        newInput.children[0].children[1].children[0].innerHTML = 'check'
+      } else {
+        e.target.classList.replace('valid', 'invalid')
+        newInput.children[0].children[1].style.color = 'red'
+        newInput.children[0].children[1].children[0].innerHTML = 'close'
+      }
+    }
+    newInput.children[0].children[0].onblur = (e) => {
+      console.log('blur', e)
+      if (e.target.value) return
+      e.target.classList.remove('invalid')
+      e.target.classList.remove('valid')
+      newInput.children[0].children[1].style.color = '#9e9e9e'
+      newInput.children[0].children[1].children[0].innerHTML = ''
+
+    }
+
+    return newInput
   }
 
   removeInput(id) {

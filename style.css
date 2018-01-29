@@ -76,8 +76,8 @@ div.fade-out {
   /* margin-top: 64px; */
 }
 
-#first-nav {
-  /* height: auto; */
+#first-nav nav {
+  background-color: #46a0e8 !important;
 }
 
 #nav-wrapper {
